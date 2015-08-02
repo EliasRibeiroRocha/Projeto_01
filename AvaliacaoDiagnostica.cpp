@@ -6,12 +6,13 @@
 #include <conio.h>
 
 //Declaração das funções
-
+int adicionar(int num);
 
 //Programa principal
 int main (int argc, char *argv[]){
 	int opcao;
 	bool sair=true;
+	int numero;
 	
 	do{
 		system("cls");
@@ -28,6 +29,13 @@ int main (int argc, char *argv[]){
 		
 		switch(opcao){
 			case 1: //Inserir função adicionar numero
+				printf("Insira um nÃºmero positivo: ");
+				scanf("%i", &numero);
+
+				if (adicionar(numero))
+					printf("NÃºmero adicionado");
+				else
+					printf("NÃ£o foi possÃ­vel adicionar esse nÃºmero");
 				break;
 			case 2: //Inserir função remover numero existente
 				break;
@@ -46,5 +54,12 @@ int main (int argc, char *argv[]){
 		}
 	}while (sair);
 	
+	return 0;
+}
+
+/**
+retorna 1 se o nÃºmero for adicionado ou 0 caso nÃ£o
+*/
+int adicionar(int num){
 	return 0;
 }
