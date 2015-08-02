@@ -6,17 +6,13 @@
 #include <conio.h>
 
 //Declaração das funções
-int validarPosicao(int pos);
-int removerPorPosicao (int pos);
-
-//Declaração das variáveis globais
-int totalNum=0;
-int vetNum[15];
+int adicionar(int num);
 
 //Programa principal
 int main (int argc, char *argv[]){
 	int opcao;
 	bool sair=true;
+	int numero;
 	
 	do{
 		system("cls");
@@ -33,6 +29,13 @@ int main (int argc, char *argv[]){
 		
 		switch(opcao){
 			case 1: //Inserir função adicionar numero
+				printf("Insira um nÃºmero positivo: ");
+				scanf("%i", &numero);
+
+				if (adicionar(numero))
+					printf("NÃºmero adicionado");
+				else
+					printf("NÃ£o foi possÃ­vel adicionar esse nÃºmero");
 				break;
 			case 2: //Inserir função remover numero existente
 				break;
@@ -54,25 +57,13 @@ int main (int argc, char *argv[]){
 	return 0;
 }
 
-//Função para remover por posição
-int removerPorPosicao (int pos){
-	
-	if (validarPosicao(pos)){
-		vetNum[pos] = -1;
-		return 1;
-	}
-	else
-		printf ("\nO valor nao foi removido!");
-	return -1;
-}
-
-//Função para validar a posição
-int validarPosicao(int pos){
-	
-	if (pos >= 0 || pos <= totalNum)
-		return 1;
-	else
-		printf ("\n\nA posicao fornecida e invalida. A posicao deve ser maior igual a 0 ou menor que %d", totalNum);
-		
+/* ************************************************************************************************************************
+Funcao para adicao de numeros
+	return 1:
+		Numero adicionado com sucesso
+	return 0:
+		Numero nao adicionado
+************************************************************************************************************************* */
+int adicionar(int num){
 	return 0;
 }
